@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин — Наушники X1</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: #111;
+      background: #f8fafc;
+    }
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .logo { font-weight: 700; font-size: 18px; letter-spacing: 0.5px; }
+    header nav a {
+      color: #d1d5db;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+    header nav a:hover { color: #fff; }
+
+    main {
+      max-width: 960px;
+      margin: 32px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 720px) {
+      main { grid-template-columns: 1fr; }
+    }
+
+    .product-image {
+      background: #e5e7eb;
+      border-radius: 12px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+    }
+
+    .product-info h1 {
+      font-size: 28px;
+      margin: 0 0 8px;
+    }
+    .price {
+      font-size: 32px;
+      font-weight: 700;
+      color: #2563eb;
+      margin: 12px 0;
+    }
+    .stock {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .buy {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .buy:hover { background: #1d4ed8; }
+
+    .details {
+      margin-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #374151;
+    }
+    .details h3 {
+      font-size: 15px;
+      margin: 16px 0 6px;
+      color: #111;
+    }
+    .hint {
+      margin-top: 24px;
+      padding: 12px 16px;
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #1e3a8a;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 16px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🛍️ SHOP</div>
+    <nav>
+      <a href="#">Каталог</a>
+      <a href="#">Доставка</a>
+      <a href="#">Возврат</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="product-image">🎧</div>
+
+    <div class="product-info">
+      <h1>Наушники X1</h1>
+      <span class="stock">В наличии</span>
+      <div class="price">2 490 ₽</div>
+      <button class="buy">Купить</button>
+
+      <div class="details">
+        <h3>Доставка</h3>
+        Курьер на следующий день, слот с 18:00 до 21:00.
+
+        <h3>Возврат</h3>
+        В течение 14 дней на ту же карту, деньги приходят за 3 рабочих дня.
+        Вскрытый товар без брака тоже можно вернуть до 14 дней.
+
+        <h3>Брак</h3>
+        Принимаем на экспертизу, деньги сразу не обещаем.
+      </div>
+
+      <div class="hint">
+        💬 Есть вопрос? Нажмите на синюю кнопку в правом нижнем углу — ответит ассистент.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 SHOP. Демо-страница для тестового задания.
+  </footer>
+
+  <!-- Виджет ассистента -->
+  <script>
+    // Если бэкенд и страница на одном домене — можно не задавать.
+    // Для локального запуска: FastAPI отдаёт и /demo, и /widget.js, и /chat.
+    window.SHOP_ASSISTANT_API = "";          // тот же origin
+    window.SHOP_ASSISTANT_TITLE = "Ассистент магазина";
+  </script>
+  <script src="/widget.js"></script>
+</body>
+</html>

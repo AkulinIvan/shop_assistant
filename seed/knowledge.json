@@ -1,0 +1,86 @@
+{
+  "intents": [
+    {
+      "code": "product",
+      "title": "Товар",
+      "priority": 10,
+      "keywords": ["наушник", "\\bx1\\b", "цена", "стоит", "наличи", "товар", "купить"],
+      "facts": [
+        {
+          "code": "general",
+          "priority": 10,
+          "template": "{name}: {stock}, {price} ₽.",
+          "variables": {"name": "Наушники X1", "stock": "в наличии", "price": "2 490"}
+        }
+      ]
+    },
+    {
+      "code": "delivery",
+      "title": "Доставка",
+      "priority": 30,
+      "keywords": ["доставк", "курьер", "привез", "слот"],
+      "facts": [
+        {
+          "code": "general",
+          "priority": 10,
+          "template": "Доставка курьером на следующий день, слот {slot}. Статус конкретного заказа я проверить не могу — уточните, пожалуйста, у менеджера.",
+          "variables": {"slot": "с 18:00 до 21:00"}
+        }
+      ]
+    },
+    {
+      "code": "returns",
+      "title": "Возврат",
+      "priority": 50,
+      "keywords": ["вернуть", "возврат", "сдать", "деньги"],
+      "facts": [
+        {
+          "code": "general",
+          "priority": 10,
+          "template": "Возврат — в течение {days} дней на {refund_to}, деньги приходят за {refund_working_days} рабочих дня.",
+          "variables": {"days": "14", "refund_to": "ту же карту", "refund_working_days": "3"}
+        },
+        {
+          "code": "opened",
+          "priority": 20,
+          "template": "Да, вскрытый товар без брака можно вернуть в течение {days} дней. Деньги приходят на {refund_to} за {refund_working_days} рабочих дня.",
+          "variables": {"days": "14", "refund_to": "ту же карту", "refund_working_days": "3"}
+        },
+        {
+          "code": "overdue",
+          "priority": 30,
+          "template": "Возврат возможен в течение {days} дней. На {day}-й день срок возврата уже истёк, поэтому вернуть товар по регламенту нельзя. Если у вас особый случай — рекомендую связаться с поддержкой.",
+          "variables": {"days": "14"}
+        }
+      ]
+    },
+    {
+      "code": "defect",
+      "title": "Брак",
+      "priority": 60,
+      "keywords": ["брак"],
+      "facts": [
+        {
+          "code": "general",
+          "priority": 10,
+          "template": "Брак принимаем на экспертизу. Деньги сразу не обещаем — возврат зависит от результата экспертизы.",
+          "variables": {}
+        }
+      ]
+    },
+    {
+      "code": "discounts",
+      "title": "Скидки",
+      "priority": 100,
+      "keywords": ["скидк"],
+      "facts": [
+        {
+          "code": "general",
+          "priority": 10,
+          "template": "Скидок нет ни при каких условиях.",
+          "variables": {}
+        }
+      ]
+    }
+  ]
+}

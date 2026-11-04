@@ -1,0 +1,12 @@
+app:
+  name: "shop-assistant"
+  language: "ru"
+  fallback_answer: "Этого нет в моём регламенте. Я не располагаю этой информацией — рекомендую уточнить у менеджера или в поддержке."
+
+database:
+  url: "sqlite:///./shop.db"
+  echo: false
+
+api:
+  host: "0.0.0.0"
+  port: 8000
