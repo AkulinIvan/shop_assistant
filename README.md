@@ -4,9 +4,7 @@
 
 ## Демо
 
-- **Живая страница с виджетом:** `https://shop.example.com/demo`
-- **Видео-демо (2 мин):** `https://youtu.be/xxxxxxxx`
-- **Скриншоты:** `docs/screenshot-demo.png`, `docs/screenshot-chat.png`
+- **Живая страница с виджетом:** `https://actios-test.ru/demo`
 
 ## Что умеет
 
